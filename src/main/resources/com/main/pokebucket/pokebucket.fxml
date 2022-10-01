@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="771.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.pokebucket.MainController">
+   <children>
+      <TabPane layoutX="1.0" prefHeight="400.0" prefWidth="771.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="PokeDex">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="637.0" layoutY="305.0" mnemonicParsing="false" onAction="#changeToAddPokemon" text="Add Pokemon" />
+                        <VBox alignment="TOP_CENTER" layoutX="603.0" prefHeight="216.0" prefWidth="160.0" spacing="15.0">
+                           <children>
+                              <TextField fx:id="pokemonName" onKeyTyped="#getPokemonName" prefHeight="25.0" prefWidth="133.0" promptText="Pokemon Name">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <ComboBox fx:id="type1" prefWidth="150.0" promptText="Type 1" />
+                              <ComboBox fx:id="type2" prefWidth="150.0" promptText="Type 2" />
+                              <ComboBox fx:id="ability" prefWidth="150.0" promptText="Ability" />
+                              <ComboBox fx:id="hiddenAbility" prefWidth="150.0" promptText="Hidden Ability" />
+                              <Button mnemonicParsing="false" onAction="#searchQuery" text="Search" />
+                           </children>
+                           <padding>
+                              <Insets top="14.0" />
+                           </padding>
+                        </VBox>
+                        <TableView fx:id="pokedexView" layoutX="8.0" layoutY="8.0" prefHeight="354.0" prefWidth="590.0">
+                          <columns>
+                            <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
+                              <TableColumn fx:id="urlColumn" prefWidth="75.0" text="URL" />
+                              <TableColumn fx:id="type1Column" prefWidth="75.0" text="Type 1" />
+                              <TableColumn fx:id="type2Column" prefWidth="75.0" text="Type 2" />
+                              <TableColumn fx:id="ability1Column" prefWidth="75.0" text="Ability 1" />
+                              <TableColumn fx:id="ability2Column" prefWidth="75.0" text="Ability 2" />
+                              <TableColumn fx:id="hiddenAbilityColumn" prefWidth="75.0" text="Hidden Abillity" />
+                              <TableColumn fx:id="egggroup1Column" prefWidth="75.0" text="Egg Group 1" />
+                              <TableColumn fx:id="egggroup2Column" prefWidth="75.0" text="Egg Group 2" />
+                              <TableColumn fx:id="eggCycleColumn" prefWidth="75.0" text="Egg Cycles" />
+                              <TableColumn fx:id="keyColumn" prefWidth="75.0" text="Key" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab text="Personal Collection">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="personalView" layoutX="8.0" layoutY="9.0" prefHeight="354.0" prefWidth="592.0">
+                           <columns>
+                              <TableColumn fx:id="pIdColumn" prefWidth="75.0" text="ID" />
+                              <TableColumn fx:id="pNameColumn" prefWidth="75.0" text="Name" />
+                              <TableColumn fx:id="levelColumn" prefWidth="75.0" text="Level" />
+                              <TableColumn fx:id="nicknameColumn" prefWidth="75.0" text="Nickname" />
+                              <TableColumn fx:id="pokeballColumn" prefWidth="75.0" text="PokeBall" />
+                              <TableColumn fx:id="shinyColumn" prefWidth="75.0" text="Shiny" />
+                              <TableColumn fx:id="natureColumn" prefWidth="75.0" text="Nature" />
+                              <TableColumn fx:id="abilityColumn" prefWidth="75.0" text="Ability" />
+                              <TableColumn fx:id="methodColumn" prefWidth="117.0" text="Method" />
+                              <TableColumn fx:id="pKeyColumn" prefWidth="117.0" text="pkey" />
+                           </columns>
+                        </TableView>
+                        <VBox alignment="TOP_CENTER" layoutX="600.0" prefHeight="272.0" prefWidth="168.0" spacing="15.0">
+                           <children>
+                              <TextField fx:id="pokemonName1" onKeyTyped="#getPokemonName" prefHeight="25.0" prefWidth="133.0" promptText="Pokemon Name">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <ComboBox prefWidth="150.0" promptText="Type 1" />
+                              <ComboBox prefWidth="150.0" promptText="Type 2" />
+                              <ComboBox prefWidth="150.0" promptText="Ability" />
+                              <ComboBox prefWidth="150.0" promptText="Hidden Ability" />
+                              <Button mnemonicParsing="false" onAction="#searchQuery" text="Search" />
+                              <Button mnemonicParsing="false" onAction="#refresh" text="Refresh" />
+                              <Button mnemonicParsing="false" onAction="#deleteRow" text="Delete" />
+                              <Button mnemonicParsing="false" onAction="#changeToAddPokemon" text="Add Pokemon" />
+                           </children>
+                           <padding>
+                              <Insets top="14.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
